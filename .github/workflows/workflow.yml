@@ -19,6 +19,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install nose coverage
 
   lint:
     runs-on: ubuntu-latest
@@ -40,4 +41,4 @@ jobs:
         uses: actions/checkout@v3
       - name: Run unit tests with nose
         run: |
-          nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+          nosetests -v --with-coverage --cover-package=app
